@@ -1,0 +1,11 @@
+// Compile kedua programnya biasa aja
+mpicc <nama_program> -o <nama_output>
+
+//Command Jalankan demo_process_generation
+mpirun --mca btl_tcp_if_include 127.0.0.1/131 -n <berapa banyak process awal yang dimau> <nama_output>
+ex:mpirun --mca btl_tcp_if_include 127.0.0.1/131 -n 1 test.o 
+
+//Command jalankan parallel_modified_merge_sort
+mpirun --mca btl_tcp_if_include 127.0.0.1/131 -n 1 (harus 1) <nama_output> <tinggi pohon sort> <ukuran array>
+ex:mpirun --mca btl_tcp_if_include 127.0.0.1/131 -n 1 test.o 4 2000
+note: tinggi pohon menentukan banyak process yang dihasilkan 1->2^1=2, 2->2^2=4 
