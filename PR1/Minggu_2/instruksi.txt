@@ -1,0 +1,8 @@
+// Compile kedua programnya biasa aja
+mpicc <nama_program> -o <nama_output>
+
+//Command Jalankan demo_process_generation
+mpirun -n <berapa banyak process awal yang dimau> <nama_output>
+ex:mpirun -n 1 test.o 
+
+Note: file .o ama file input harus di folder yang sama
